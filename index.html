@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Halaman Utama</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS: Styling dasar untuk semua elemen */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* CSS: Styling untuk body halaman, termasuk latar belakang */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('https://cdn6.f-cdn.com/contestentries/1030409/25006549/5925da92acd8f_thumb900.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* CSS: Styling untuk wrapper, yaitu kotak formulir login */
+        .wrapper {
+            width: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px); /* Efek blur pada latar belakang */
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: white;
+        }
+        
+        /* CSS: Styling untuk judul H1 di dalam formulir */
+        .wrapper h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        /* CSS: Styling untuk wadah input field dan ikon */
+        .input-box {
+            position: relative;
+            margin: 15px 0;
+        }
+        
+        /* CSS: Styling untuk elemen input (kolom username dan password) */
+        .input-box input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+            font-size: 16px;
+        }
+        
+        /* CSS: Styling untuk teks placeholder di dalam input */
+        .input-box input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* CSS: Styling untuk ikon di dalam input box */
+        .input-box i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+        }
+        
+        /* CSS: Styling untuk bagian 'Remember me' dan 'Forgot password' */
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+        
+        /* CSS: Styling untuk tombol login */
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        /* CSS: Efek hover saat kursor diarahkan ke tombol */
+        .btn:hover {
+            background: linear-gradient(45deg, #0056b3, #003d7a);
+        }
+        
+        /* CSS: Styling untuk bagian tautan pendaftaran */
+        .register-link {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        /* CSS: Styling untuk tautan di bagian pendaftaran */
+        .register-link a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        /* CSS: Efek hover pada tautan pendaftaran */
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="loginForm">
+            <h1>Login</h1>
+            
+            <div class="input-box">
+                <input type="text" id="username" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="btn">Login</button>
+            
+            <div class="register-link">
+                <p>Tidak punya akun? <a href="#">Daftar</a></p>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // JavaScript: Menambahkan event listener saat formulir di-submit
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            // JavaScript: Mencegah halaman reload saat submit
+            event.preventDefault();
+            
+            // JavaScript: Mengubah teks tombol untuk memberikan feedback
+            document.querySelector(".btn").textContent = "Logging in...";
+            
+            // JavaScript: Mensimulasikan proses login selama 1.5 detik
+            setTimeout(() => {
+                // JavaScript: Mengarahkan pengguna ke halaman lain setelah login
+                window.location.href = "#"; // Ganti '#' dengan URL halaman tujuan Anda
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
